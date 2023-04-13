@@ -1,6 +1,11 @@
 package com.cornhub;
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.app.Activity;
+import android.os.Build;
+import android.os.Bundle;
+import android.view.WindowInsets;
+import android.view.WindowInsetsController;
+
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -22,7 +27,7 @@ import org.json.JSONObject;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class LeaderboardActivity extends AppCompatActivity {
+public class LeaderboardActivity extends Activity {
 
     RecyclerView leaderboardRecycler;
     RecyclerView.LayoutManager leaderboardRecyclerViewLayoutManager;
@@ -38,6 +43,7 @@ public class LeaderboardActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        hideStatusBar();
         setContentView(R.layout.leaderboard);
 
         currentUsername = findViewById(R.id.currentUsername);
@@ -113,6 +119,15 @@ public class LeaderboardActivity extends AppCompatActivity {
                 scoreboardList.add(element);
             } catch (JSONException e) {
                 throw new RuntimeException(e);
+            }
+        }
+    }
+
+    private void hideStatusBar() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            WindowInsetsController wic = getWindow().getDecorView().getWindowInsetsController();
+            if (wic != null) {
+                wic.hide(WindowInsets.Type.statusBars());
             }
         }
     }
