@@ -33,4 +33,9 @@ public class MainActivity extends Activity {
         Intent indent = new Intent(this, GameActivity.class);
         startActivity(indent);
     }
+
+    public void goToLeaderboard(View view) {
+        Intent indent = new Intent(this, LeaderboardActivity.class);
+        startActivity(indent);
+    }
 }
