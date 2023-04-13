@@ -3,7 +3,7 @@ const router = express.Router();
 const db = require('../database/db')
 
 router.get("/", (req, res) => {
-    db.query("SELECT * FROM leaderboard ORDER BY score desc limit 8", function (err, result, fields) {
+    db.query("SELECT * FROM leaderboard ORDER BY score desc limit 10", function (err, result, fields) {
         if (err) throw err;
         return res.send(result);
     });
