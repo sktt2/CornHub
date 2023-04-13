@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/BackBoard"
+        android:layout_width="415dp"
+        android:layout_height="400dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/backboard"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/headerBoard"
+        android:layout_width="407dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="3dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/backboard"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/buttonMenu"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="36dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/menu_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/coinCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="15dp"
+        android:text="10"
+        android:textColor="@color/black"
+        android:textSize="10pt"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/boardPlot1"
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="25dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/card"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/BackBoard" />
+
+    <TextView
+        android:id="@+id/Plot1"
+        android:layout_width="98dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/dekko"
+        android:text="Plot 1"
+        android:textColor="@color/black"
+        android:textSize="13pt"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/boardPlot1"
+        app:layout_constraintTop_toTopOf="@+id/boardPlot1" />
+
+    <TextView
+        android:id="@+id/levelPlot1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:text="Level 0"
+        android:textColor="@color/black"
+        android:textSize="6.5pt"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/boardPlot1"
+        app:layout_constraintTop_toBottomOf="@+id/Plot1" />
+
+    <TextView
+        android:id="@+id/Minus1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:textColor="@color/black"
+        android:textSize="20pt"
+        android:textStyle="bold"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toStartOf="@+id/buttonMinus1"
+        app:layout_constraintTop_toTopOf="@+id/buttonMinus1" />
+
+    <Button
+        android:id="@+id/buttonMinus1"
+        android:layout_width="40dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="110dp"
+        android:background="#00EFEAEA"
+        android:textAlignment="viewEnd"
+        android:textSize="20pt"
+        app:layout_constraintEnd_toEndOf="@+id/boardPlot1"
+        app:layout_constraintTop_toTopOf="@+id/boardPlot1" />
+
+    <TextView
+        android:id="@+id/Count1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:textColor="@color/black"
+        android:textSize="18pt"
+        android:textStyle="bold"
+        android:layout_marginTop="25dp"
+        app:layout_constraintStart_toEndOf="@+id/buttonMinus1"
+        app:layout_constraintTop_toTopOf="@+id/boardPlot1" />
+
+    <TextView
+        android:id="@+id/Plus1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+"
+        android:textColor="@color/black"
+        android:textSize="15pt"
+        android:textStyle="bold"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@+id/buttonPlus1"
+        app:layout_constraintTop_toTopOf="@+id/buttonPlus1" />
+
+    <Button
+        android:id="@+id/buttonPlus1"
+        android:layout_width="40dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="20dp"
+        android:background="#00EFEAEA"
+        android:textAlignment="viewEnd"
+        android:textSize="20pt"
+        app:layout_constraintStart_toEndOf="@+id/Count1"
+        app:layout_constraintTop_toTopOf="@+id/boardPlot1" />
+
+    <ImageView
+        android:id="@+id/boardPlot2"
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/card"
+        android:layout_marginStart="30dp"
+        app:layout_constraintStart_toStartOf="@+id/BackBoard"
+        app:layout_constraintTop_toBottomOf="@+id/boardPlot1" />
+
+    <TextView
+        android:id="@+id/Plot2"
+        android:layout_width="98dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/dekko"
+        android:text="Plot 2"
+        android:textColor="@color/black"
+        android:textSize="13pt"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/boardPlot2"
+        app:layout_constraintTop_toTopOf="@+id/boardPlot2" />
+
+    <TextView
+        android:id="@+id/levelPlot2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:text="Level 0"
+        android:textColor="@color/black"
+        android:textSize="6.5pt"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/boardPlot2"
+        app:layout_constraintTop_toBottomOf="@+id/Plot2" />
+
+    <TextView
+        android:id="@+id/Minus2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:textColor="@color/black"
+        android:textSize="20pt"
+        android:textStyle="bold"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toStartOf="@+id/buttonMinus2"
+        app:layout_constraintTop_toTopOf="@+id/buttonMinus2" />
+
+    <Button
+        android:id="@+id/buttonMinus2"
+        android:layout_width="40dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="110dp"
+        android:background="#00EFEAEA"
+        android:textAlignment="viewEnd"
+        android:textSize="20pt"
+        app:layout_constraintEnd_toEndOf="@+id/boardPlot2"
+        app:layout_constraintTop_toTopOf="@+id/boardPlot2" />
+
+    <TextView
+        android:id="@+id/Count2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2"
+        android:textColor="@color/black"
+        android:textSize="18pt"
+        android:textStyle="bold"
+        android:layout_marginTop="25dp"
+        app:layout_constraintStart_toEndOf="@+id/buttonMinus2"
+        app:layout_constraintTop_toTopOf="@+id/boardPlot2" />
+
+    <TextView
+        android:id="@+id/Plus2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+"
+        android:textColor="@color/black"
+        android:textSize="15pt"
+        android:textStyle="bold"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@+id/buttonPlus2"
+        app:layout_constraintTop_toTopOf="@+id/buttonPlus2" />
+
+    <Button
+        android:id="@+id/buttonPlus2"
+        android:layout_width="40dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="20dp"
+        android:background="#00EFEAEA"
+        android:textAlignment="viewEnd"
+        android:textSize="20pt"
+        app:layout_constraintStart_toEndOf="@+id/Count2"
+        app:layout_constraintTop_toTopOf="@+id/boardPlot2" />
+
+    <ImageView
+        android:id="@+id/boardPlot3"
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="30dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/card"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/boardPlot2" />
+
+    <TextView
+        android:id="@+id/Plot3"
+        android:layout_width="98dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/dekko"
+        android:text="Plot 3"
+        android:textColor="@color/black"
+        android:textSize="13pt"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/boardPlot3"
+        app:layout_constraintTop_toTopOf="@+id/boardPlot3" />
+
+    <TextView
+        android:id="@+id/levelPlot3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:text="Level 0"
+        android:textColor="@color/black"
+        android:textSize="6.5pt"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/boardPlot3"
+        app:layout_constraintTop_toBottomOf="@+id/Plot3" />
+
+    <TextView
+        android:id="@+id/Minus3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:textColor="@color/black"
+        android:textSize="20pt"
+        android:textStyle="bold"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toStartOf="@+id/buttonMinus3"
+        app:layout_constraintTop_toTopOf="@+id/buttonMinus3" />
+
+    <Button
+        android:id="@+id/buttonMinus3"
+        android:layout_width="40dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="110dp"
+        android:background="#00EFEAEA"
+        android:textAlignment="viewEnd"
+        android:textSize="20pt"
+        app:layout_constraintEnd_toEndOf="@+id/boardPlot3"
+        app:layout_constraintTop_toTopOf="@+id/boardPlot3" />
+
+    <TextView
+        android:id="@+id/Count3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3"
+        android:textColor="@color/black"
+        android:textSize="18pt"
+        android:textStyle="bold"
+        android:layout_marginTop="25dp"
+        app:layout_constraintStart_toEndOf="@+id/buttonMinus3"
+        app:layout_constraintTop_toTopOf="@+id/boardPlot3" />
+
+    <TextView
+        android:id="@+id/Plus3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+"
+        android:textColor="@color/black"
+        android:textSize="15pt"
+        android:textStyle="bold"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@+id/buttonPlus3"
+        app:layout_constraintTop_toTopOf="@+id/buttonPlus3" />
+
+    <Button
+        android:id="@+id/buttonPlus3"
+        android:layout_width="40dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="20dp"
+        android:background="#00EFEAEA"
+        android:textAlignment="viewEnd"
+        android:textSize="20pt"
+        app:layout_constraintStart_toEndOf="@+id/Count3"
+        app:layout_constraintTop_toTopOf="@+id/boardPlot3" />
+
+    <ImageView
+        android:id="@+id/buyButtonImage"
+        android:layout_width="394dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="15dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/big_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/BackBoard" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="396dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="4dp"
+        android:background="#00FFFFFF"
+        android:fontFamily="@font/dekko"
+        android:text="Buy Farmer (10g)"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/buyButtonImage"
+        app:layout_constraintTop_toTopOf="@+id/buyButtonImage" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
