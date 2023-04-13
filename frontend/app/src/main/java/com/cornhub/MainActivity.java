@@ -30,12 +30,17 @@ public class MainActivity extends Activity {
     }
 
     public void buttonClicked(View view) {
-        Intent indent = new Intent(this, GameActivity.class);
-        startActivity(indent);
-    }
+        int id = view.getId();
 
-    public void goToLeaderboard(View view) {
-        Intent indent = new Intent(this, LeaderboardActivity.class);
-        startActivity(indent);
+        if (id == R.id.startButton) {
+            Intent startIntent = new Intent(MainActivity.this, GameActivity.class);
+            startActivity(startIntent);
+        } else if (id == R.id.resetButton) {
+            Intent resetIntent = new Intent(MainActivity.this, ResetActivity.class);
+            startActivity(resetIntent);
+        } else if (id == R.id.leaderboardButton) {
+            Intent leaderboardIntent = new Intent(MainActivity.this, LeaderboardActivity.class);
+            startActivity(leaderboardIntent);
+        }
     }
 }
