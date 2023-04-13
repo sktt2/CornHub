@@ -30,7 +30,16 @@ public class MainActivity extends Activity {
     }
 
     public void buttonClicked(View view) {
-        Intent indent = new Intent(this, GameActivity.class);
-        startActivity(indent);
+        int id = view.getId();
+
+        if (id == R.id.playButton) {
+            Intent playIntent = new Intent(MainActivity.this, GameActivity.class);
+            startActivity(playIntent);
+        } else if (id == R.id.leaderboardButton) {
+            Intent leaderboardIntent = new Intent(MainActivity.this, LeaderboardActivity.class);
+            startActivity(leaderboardIntent);
+        } else if (id == R.id.quitButton) {
+            finishAffinity();
+        }
     }
 }
