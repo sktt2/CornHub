@@ -154,7 +154,6 @@ public class GameManager implements View.OnClickListener {
         updateButtons();
     }
     public void addFarmer(int plant){
-        System.out.println(plant);
         Farmer farmer = this.freeFarmers.remove(0);
         if (plant == 1){
             farmer.setLock(lock1);
@@ -262,7 +261,6 @@ public class GameManager implements View.OnClickListener {
         }
     }
     public void removeFarmer(int plant){
-        System.out.println(plant);
         Farmer farmer = null;
         Thread thread = null;
         if (plant == 1){

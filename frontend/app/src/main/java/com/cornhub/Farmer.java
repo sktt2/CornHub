@@ -19,15 +19,12 @@ public class Farmer {
         public void run() {
             while (true) {
                 try {
-                    System.out.println("Sleepin for 5 seconds");
                     Thread.sleep(5000);
                 } catch (InterruptedException e) {
-                    System.out.println("Thread is interrupted");
                     break;
                 }
                 int level = corn.getLevel();
                 if (level == 10) {
-                    System.out.println("passaway is good");
                     break;
                 }
                 synchronized (lock){

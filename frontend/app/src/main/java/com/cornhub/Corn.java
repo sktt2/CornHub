@@ -17,7 +17,6 @@ public class Corn {
     public void grow() {
         this.level++;
         updateImg();
-        System.out.println("Growing "+this.level);
     }
 
     public void updateImg(){

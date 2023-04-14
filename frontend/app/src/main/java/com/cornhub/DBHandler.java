@@ -83,21 +83,16 @@ public class DBHandler extends SQLiteOpenHelper {
         String update = "UPDATE farm SET farmerCount = " + farmerCount + ", plant1Assigned = " + plant1Assigned + ", plant2Assigned = " + plant2Assigned + ", plant3Assigned = " + plant3Assigned +
                 ", corn1Level = " + corn1Level + ", corn2Level = " + corn2Level + ", corn3Level = " + corn3Level +
                 ", farmerCost = " + farmerCost + ", gold = " + gold + ", total = " + total + " WHERE ID = 1;";
-        System.out.println (update);
         Cursor c = writeDB.rawQuery(update,null);
         c.moveToFirst();
         c.close();
 
         int[] data = getData();
-        for(int i : data){
-            System.out.println(i);
-        }
     }
 
     public void updateName(String name){
         SQLiteDatabase writeDB = this.getWritableDatabase();
         String update = "UPDATE farm SET username = '" + name + "' WHERE ID = 1;";
-        System.out.println (update);
         Cursor c = writeDB.rawQuery(update,null);
         c.moveToFirst();
         c.close();
