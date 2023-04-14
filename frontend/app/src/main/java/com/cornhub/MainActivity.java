@@ -38,8 +38,10 @@ public class MainActivity extends Activity {
             Intent startIntent = new Intent(MainActivity.this, GameActivity.class);
             startActivity(startIntent);
         } else if (id == R.id.resetButton) {
-            Intent resetIntent = new Intent(MainActivity.this, ResetActivity.class);
-            startActivity(resetIntent);
+            DBHandler db = new DBHandler(this);
+            db.drop();
+            Intent startIntent = new Intent(MainActivity.this, GameActivity.class);
+            startActivity(startIntent);
         } else if (id == R.id.leaderboardButton) {
             Intent leaderboardIntent = new Intent(MainActivity.this, LeaderboardActivity.class);
             startActivity(leaderboardIntent);

@@ -126,18 +126,22 @@ public class GameManager implements View.OnClickListener {
 
         buyButton = activity.findViewById(R.id.button3);
         buyButton.setOnClickListener(this);
+        buyButton.setText("BUY FARMER ("+this.farmerCost+"G)");
 
         corn1Button = activity.findViewById(R.id.corn1);
         corn1Button.setOnClickListener(this);
         corn1.setStatus(corn1Button);
+        corn1.updateImg();
 
         corn2Button = activity.findViewById(R.id.corn2);
         corn2Button.setOnClickListener(this);
         corn2.setStatus(corn2Button);
+        corn2.updateImg();
 
         corn3Button = activity.findViewById(R.id.corn3);
         corn3Button.setOnClickListener(this);
         corn3.setStatus(corn3Button);
+        corn3.updateImg();
 
         farmerCountText = activity.findViewById(R.id.farmerCount);
         farmerCountText.setText(this.farmerCount+"");
@@ -201,6 +205,12 @@ public class GameManager implements View.OnClickListener {
         }
         if (id == R.id.corn1){
             reap(1);
+        }
+        if (id == R.id.corn2){
+            reap(2);
+        }
+        if (id == R.id.corn3){
+            reap(3);
         }
         if (id == R.id.button3){
             buyFarmer();
@@ -284,7 +294,7 @@ public class GameManager implements View.OnClickListener {
         }
 
         this.gold -= this.farmerCost;
-        this.farmerCost = this.farmerCost+1;
+        this.farmerCost = this.farmerCost*10;
         this.freeFarmers.add(new Farmer());
         coinCount.setText(this.gold+"");
         buyButton.setText("BUY FARMER ("+this.farmerCost+"G)");
@@ -319,6 +329,7 @@ public class GameManager implements View.OnClickListener {
         gold +=amount;
         coinCount.setText(this.gold+"");
         startThread(plant);
+        db.updateData(this.farmerCount, this.plot1Farmers.size(), this.plot2Farmers.size(), this.plot3Farmers.size(), this.corn1.getLevel(), this.corn2.getLevel(), this.corn3.getLevel(), this.farmerCost, this.gold, this.total );
     }
 
     public void startThread(int plant) {

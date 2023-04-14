@@ -16,6 +16,11 @@ public class Corn {
 
     public void grow() {
         this.level++;
+        updateImg();
+        System.out.println("Growing "+this.level);
+    }
+
+    public void updateImg(){
         if (level > 1){
             this.status.setImageResource(R.drawable.corn_1);
         }
@@ -26,14 +31,12 @@ public class Corn {
             this.status.setImageResource(R.drawable.corn_3);
         }
         if (level > 6){
-            this.status.setImageResource(R.drawable.corn_2);
+            this.status.setImageResource(R.drawable.corn_4);
         }
         if (level > 9){
-            this.status.setImageResource(R.drawable.corn_2);
+            this.status.setImageResource(R.drawable.corn_5);
         }
-        System.out.println("Growing "+this.level);
     }
-
     public int getLevel() {
         return this.level;
     }

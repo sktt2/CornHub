@@ -3,9 +3,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase;
-import android.provider.BaseColumns;
-
-import java.util.ArrayList;
+import java.util.Random;
 
 public class DBHandler extends SQLiteOpenHelper {
     private static final String DB_Name = "farmSim";
@@ -14,32 +12,19 @@ public class DBHandler extends SQLiteOpenHelper {
 
     public DBHandler(Context context){
         super(context, DB_Name, null, DB_VERSION);
-        drop();
         SQLiteDatabase db = getWritableDatabase();
         String query = "CREATE TABLE IF NOT EXISTS farm " +
                 "(id INT, farmerCount INT, plant1Assigned INT, plant2Assigned INT, plant3Assigned INT," +
                 "corn1Level INT, corn2Level INT, corn3Level INT,"+
-                "farmerCost INT, gold INT, total INT, CONSTRAINT id_pk PRIMARY KEY(id));";
+                "farmerCost INT, gold INT, total INT, username VARCHAR(50), CONSTRAINT id_pk PRIMARY KEY(id));";
         db.execSQL(query);
-        String insert_query = "INSERT INTO farm (id, farmerCount, plant1Assigned, plant2Assigned, plant3Assigned,corn1Level, corn2Level, corn3Level, farmerCost, gold, total) VALUES (1,3,0,0,0,0,0,0,10,15,15)";
+
+        Random random = new Random();
+        String insert_query = "INSERT INTO farm (id, farmerCount, plant1Assigned, plant2Assigned, plant3Assigned,corn1Level, corn2Level, corn3Level, farmerCost, gold, total, username)" +
+                " SELECT * FROM (SELECT 1,1,0,0,0,0,0,0,10,0,0,'Player"+ random.nextInt(10000000) + 1 +"') WHERE NOT EXISTS (SELECT * FROM farm)";
 
         db.execSQL(insert_query);
 
-        String query_check = "SELECT * FROM farm";
-        SQLiteDatabase readDB = this.getReadableDatabase();
-        //Cursor cursor = readDB.rawQuery(query_check, null);
-
-        int[] data = new int[10];
-        int i = 0;
-        cursor.moveToFirst();
-
-        String stored ="ALLAH LOVES US ALL : ";
-        while(cursor.isAfterLast() == false ) {
-            stored += cursor.getInt(i);
-            cursor.moveToNext();
-            i++;
-        }
-        System.out.println(stored);
     }
 
 
@@ -67,12 +52,11 @@ public class DBHandler extends SQLiteOpenHelper {
         String query_check = "SELECT * FROM farm";
         SQLiteDatabase readDB = this.getReadableDatabase();
         Cursor cursor = readDB.rawQuery(query_check, null);
+        cursor.moveToFirst();
 
         int[] data = new int[10];
-        int i = 0;
-        while(cursor.moveToNext()) {
-            data[i] = cursor.getInt(i);
-            i++;
+        for(int i = 1; i < 11; i++){
+            data[i-1] = cursor.getInt(i);
         }
         return data;
     }

@@ -20,7 +20,7 @@ public class Farmer {
             while (true) {
                 try {
                     System.out.println("Sleepin for 5 seconds");
-                    Thread.sleep(1000);
+                    Thread.sleep(5000);
                 } catch (InterruptedException e) {
                     System.out.println("Thread is interrupted");
                     break;
