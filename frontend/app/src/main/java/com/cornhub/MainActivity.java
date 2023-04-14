@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowInsets;
 import android.view.WindowInsetsController;
+import android.widget.ImageView;
 
 /**
  * A class representing an activity of the main menu.
@@ -18,6 +19,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         hideStatusBar();
         setContentView(R.layout.activity_main);
+
     }
 
     private void hideStatusBar() {

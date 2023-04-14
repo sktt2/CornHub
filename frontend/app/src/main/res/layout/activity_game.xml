@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/screen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:keepScreenOn="true"
@@ -32,6 +33,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="36dp"
+        android:onClick="buttonClicked"
         android:scaleType="fitXY"
         android:src="@drawable/menu_button"
         app:layout_constraintEnd_toEndOf="parent"
@@ -91,11 +93,11 @@
         android:id="@+id/Minus1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
         android:text="-"
         android:textColor="@color/black"
         android:textSize="20pt"
         android:textStyle="bold"
-        android:layout_marginStart="10dp"
         app:layout_constraintStart_toStartOf="@+id/buttonMinus1"
         app:layout_constraintTop_toTopOf="@+id/buttonMinus1" />
 
@@ -115,11 +117,11 @@
         android:id="@+id/Count1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
         android:text="1"
         android:textColor="@color/black"
         android:textSize="18pt"
         android:textStyle="bold"
-        android:layout_marginTop="25dp"
         app:layout_constraintStart_toEndOf="@+id/buttonMinus1"
         app:layout_constraintTop_toTopOf="@+id/boardPlot1" />
 
@@ -127,12 +129,12 @@
         android:id="@+id/Plus1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
         android:text="+"
         android:textColor="@color/black"
         android:textSize="15pt"
         android:textStyle="bold"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="@+id/buttonPlus1"
         app:layout_constraintTop_toTopOf="@+id/buttonPlus1" />
 
@@ -151,9 +153,9 @@
         android:id="@+id/boardPlot2"
         android:layout_width="350dp"
         android:layout_height="100dp"
+        android:layout_marginStart="30dp"
         android:scaleType="fitXY"
         android:src="@drawable/card"
-        android:layout_marginStart="30dp"
         app:layout_constraintStart_toStartOf="@+id/BackBoard"
         app:layout_constraintTop_toBottomOf="@+id/boardPlot1" />
 
@@ -187,11 +189,11 @@
         android:id="@+id/Minus2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
         android:text="-"
         android:textColor="@color/black"
         android:textSize="20pt"
         android:textStyle="bold"
-        android:layout_marginStart="10dp"
         app:layout_constraintStart_toStartOf="@+id/buttonMinus2"
         app:layout_constraintTop_toTopOf="@+id/buttonMinus2" />
 
@@ -211,11 +213,11 @@
         android:id="@+id/Count2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
         android:text="2"
         android:textColor="@color/black"
         android:textSize="18pt"
         android:textStyle="bold"
-        android:layout_marginTop="25dp"
         app:layout_constraintStart_toEndOf="@+id/buttonMinus2"
         app:layout_constraintTop_toTopOf="@+id/boardPlot2" />
 
@@ -223,12 +225,12 @@
         android:id="@+id/Plus2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
         android:text="+"
         android:textColor="@color/black"
         android:textSize="15pt"
         android:textStyle="bold"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="@+id/buttonPlus2"
         app:layout_constraintTop_toTopOf="@+id/buttonPlus2" />
 
@@ -283,11 +285,11 @@
         android:id="@+id/Minus3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
         android:text="-"
         android:textColor="@color/black"
         android:textSize="20pt"
         android:textStyle="bold"
-        android:layout_marginStart="10dp"
         app:layout_constraintStart_toStartOf="@+id/buttonMinus3"
         app:layout_constraintTop_toTopOf="@+id/buttonMinus3" />
 
@@ -307,11 +309,11 @@
         android:id="@+id/Count3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
         android:text="3"
         android:textColor="@color/black"
         android:textSize="18pt"
         android:textStyle="bold"
-        android:layout_marginTop="25dp"
         app:layout_constraintStart_toEndOf="@+id/buttonMinus3"
         app:layout_constraintTop_toTopOf="@+id/boardPlot3" />
 
@@ -319,12 +321,12 @@
         android:id="@+id/Plus3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
         android:text="+"
         android:textColor="@color/black"
         android:textSize="15pt"
         android:textStyle="bold"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="@+id/buttonPlus3"
         app:layout_constraintTop_toTopOf="@+id/buttonPlus3" />
 
@@ -363,6 +365,54 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/buyButtonImage"
         app:layout_constraintTop_toTopOf="@+id/buyButtonImage" />
+
+    <ImageView
+        android:id="@+id/corn1"
+        android:layout_width="155dp"
+        android:layout_height="179dp"
+        android:src="@drawable/corn_1"
+        app:layout_constraintBottom_toTopOf="@+id/BackBoard"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/farmer"
+        android:layout_width="156dp"
+        android:layout_height="231dp"
+        android:layout_marginTop="56dp"
+        android:rotationY="180"
+        android:src="@drawable/farmer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerBoard" />
+
+    <TextView
+        android:id="@+id/farmerCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="196dp"
+        android:layout_marginTop="12dp"
+        android:text="0"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/headerBoard"
+        app:layout_constraintTop_toTopOf="@+id/headerBoard" />
+
+    <ImageView
+        android:id="@+id/cloud1"
+        android:layout_width="141dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/cloud"
+        app:layout_constraintTop_toTopOf="@+id/headerBoard"
+        tools:layout_editor_absoluteX="135dp" />
+
+    <ImageView
+        android:id="@+id/cloud2"
+        android:layout_width="164dp"
+        android:layout_height="129dp"
+        android:layout_marginTop="44dp"
+        android:src="@drawable/cloud"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="251dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
