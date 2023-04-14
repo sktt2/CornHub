@@ -26,12 +26,6 @@ public class GameActivity extends Activity {
         DBHandler db = new DBHandler(this);
         int[] data = db.getData();
 
-//        String stored = "";
-//        for(int i : data){
-//            stored += i + ",";
-//        }
-//        System.out.println(stored);
-
         setContentView(R.layout.activity_game);
         ArrayList<Farmer> farmers = new ArrayList<>();
         for(int i = 0; i < data[0]; i++) {
@@ -80,7 +74,7 @@ public class GameActivity extends Activity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             WindowInsetsController wic = getWindow().getDecorView().getWindowInsetsController();
             if (wic != null) {
-                wic.hide(WindowInsets.Type.statusBars());
+                wic.hide(WindowInsets.Type.systemBars());
             }
         }
     }

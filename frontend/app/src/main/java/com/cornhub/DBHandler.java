@@ -3,6 +3,11 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase;
+
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 public class DBHandler extends SQLiteOpenHelper {
@@ -58,6 +63,18 @@ public class DBHandler extends SQLiteOpenHelper {
         for(int i = 1; i < 11; i++){
             data[i-1] = cursor.getInt(i);
         }
+        return data;
+    }
+
+    public JSONObject getLeaderboardData(){
+        String query_check = "SELECT * FROM farm";
+        SQLiteDatabase readDB = this.getReadableDatabase();
+        Cursor cursor = readDB.rawQuery(query_check, null);
+        cursor.moveToFirst();
+        Map<String, String> params = new HashMap();
+        params.put("id", cursor.getString(11));
+        params.put("total", cursor.getInt(10)+"");
+        JSONObject data = new JSONObject(params);
         return data;
     }
 

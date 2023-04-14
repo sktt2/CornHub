@@ -26,7 +26,7 @@ public class MainActivity extends Activity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             WindowInsetsController wic = getWindow().getDecorView().getWindowInsetsController();
             if (wic != null) {
-                wic.hide(WindowInsets.Type.statusBars());
+                wic.hide(WindowInsets.Type.systemBars());
             }
         }
     }
