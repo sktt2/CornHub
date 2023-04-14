@@ -55,10 +55,6 @@ public class LeaderboardActivity extends Activity {
         JSONObject leaderboardData = db.getLeaderboardData();
         String name = "";
 
-        currentUsername = findViewById(R.id.currentUsername);
-        currentUserScore = findViewById(R.id.currentUserScore);
-        currentUserRank = findViewById(R.id.currentUserRank);
-
         String url = "http://10.0.2.2:3000/leaderboard";
 
         Map<String, String> params = new HashMap();
@@ -110,7 +106,9 @@ public class LeaderboardActivity extends Activity {
         });
 
 
-
+        currentUsername = findViewById(R.id.currentUsername);
+        currentUserScore = findViewById(R.id.currentUserScore);
+        currentUserRank = findViewById(R.id.currentUserRank);
         String url2 = "http://10.0.2.2:3000/leaderboard/" + name;
         JsonArrayRequest jsonArrayRequest2 = new JsonArrayRequest(Request.Method.GET, url2, null, new Response.Listener<JSONArray>() {
             @Override

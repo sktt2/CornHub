@@ -294,7 +294,7 @@ public class GameManager implements View.OnClickListener {
         }
 
         this.gold -= this.farmerCost;
-        this.farmerCost = this.farmerCost*10;
+        this.farmerCost = this.farmerCost*2;
         this.freeFarmers.add(new Farmer());
         coinCount.setText(this.gold+"");
         buyButton.setText("BUY FARMER ("+this.farmerCost+"G)");

@@ -94,6 +94,15 @@ public class DBHandler extends SQLiteOpenHelper {
         }
     }
 
+    public void updateName(String name){
+        SQLiteDatabase writeDB = this.getWritableDatabase();
+        String update = "UPDATE farm SET username = '" + name + "' WHERE ID = 1;";
+        System.out.println (update);
+        Cursor c = writeDB.rawQuery(update,null);
+        c.moveToFirst();
+        c.close();
+    }
+
     public void drop(){
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("DROP TABLE IF EXISTS farm");

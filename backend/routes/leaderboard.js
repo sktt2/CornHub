@@ -26,7 +26,7 @@ router.post("/", (req, res) => {
     });
     db.query(`SELECT * FROM leaderboard WHERE id='${id}'`, function (err, result, fields) {
         if (err) throw err;
-        return res.send(result);
+        return res.send(result[0]);
     });
 });
 
