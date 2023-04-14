@@ -15,7 +15,7 @@ public class GameActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         hideStatusBar();
-        setContentView(new GameView(this));
+        setContentView(R.layout.activity_game);
     }
 
     private void hideStatusBar() {

@@ -17,16 +17,20 @@ public class Farmer {
     public Runnable water = new Runnable() {
         @Override
         public void run() {
-            try {
-                System.out.println("Sleepin for 5 seconds");
-                Thread.sleep(5000);
-            } catch (InterruptedException e) {
-                System.out.println("Thread is interrupted");
+            while (true) {
+                try {
+                    System.out.println("Sleepin for 5 seconds");
+                    Thread.sleep(5000);
+                } catch (InterruptedException e) {
+                    System.out.println("Thread is interrupted");
+                }
+                int level = corn.getLevel();
+                if (level == 10) break;
+                synchronized (lock){
+                    corn.grow();
+                    lock.notifyAll();
+                }
             }
         }
-    }
-//    public void water(){
-//        //TODO add timer
-//
-//    }
+    };
 }
