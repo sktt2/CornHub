@@ -1,6 +1,7 @@
 package com.cornhub;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -21,10 +22,22 @@ public class GameActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         hideStatusBar();
+
+        DBHandler db = new DBHandler(this);
+        int[] data = db.getData();
+
+//        String stored = "";
+//        for(int i : data){
+//            stored += i + ",";
+//        }
+//        System.out.println(stored);
+
         setContentView(R.layout.activity_game);
         ArrayList<Farmer> farmers = new ArrayList<>();
-        farmers.add(new Farmer());
-        this.gameManager = new GameManager(GameActivity.this ,farmers);
+        for(int i = 0; i < data[0]; i++) {
+            farmers.add(new Farmer());
+        }
+        this.gameManager = new GameManager(GameActivity.this ,farmers, data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9]);
 
 
 

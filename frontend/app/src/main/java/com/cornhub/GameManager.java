@@ -1,5 +1,6 @@
 package com.cornhub;
 
+import android.content.Context;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -44,14 +45,18 @@ public class GameManager implements View.OnClickListener {
     private Button plot3Minus;
     private Button buyButton;
     private ImageView corn1Button;
+    private ImageView corn2Button;
+    private ImageView corn3Button;
     private TextView minus1Text;
     private TextView minus2Text;
     private TextView minus3Text;
     private TextView plus1Text;
     private TextView plus2Text;
     private TextView plus3Text;
-
+    private DBHandler db;
     public GameManager(GameActivity activity,ArrayList<Farmer> farmers, int plant1Assigned, int plant2Assigned, int plant3Assigned,int corn1Level, int corn2Level, int corn3Level, int farmerCost, int gold, int total){
+
+        db = new DBHandler(activity);
         this.activity = activity;
         this.farmerCount = farmers.size();
         this.freeFarmers = farmers;
@@ -126,6 +131,14 @@ public class GameManager implements View.OnClickListener {
         corn1Button.setOnClickListener(this);
         corn1.setStatus(corn1Button);
 
+        corn2Button = activity.findViewById(R.id.corn2);
+        corn2Button.setOnClickListener(this);
+        corn2.setStatus(corn2Button);
+
+        corn3Button = activity.findViewById(R.id.corn3);
+        corn3Button.setOnClickListener(this);
+        corn3.setStatus(corn3Button);
+
         farmerCountText = activity.findViewById(R.id.farmerCount);
         farmerCountText.setText(this.farmerCount+"");
         minus1Text = activity.findViewById(R.id.Minus1);
@@ -195,6 +208,8 @@ public class GameManager implements View.OnClickListener {
     }
 
     public void updateButtons() {
+        db.updateData(this.farmerCount, this.plot1Farmers.size(), this.plot2Farmers.size(), this.plot3Farmers.size(), this.corn1.getLevel(), this.corn2.getLevel(), this.corn3.getLevel(), this.farmerCost, this.gold, this.total );
+
         if (this.freeFarmers.size() == 0){
             this.plot1Plus.setVisibility(View.INVISIBLE);
             this.plot2Plus.setVisibility(View.INVISIBLE);

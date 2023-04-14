@@ -43,7 +43,7 @@
         android:id="@+id/coinCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="70dp"
         android:layout_marginTop="15dp"
         android:text="10"
         android:textColor="@color/black"
@@ -65,29 +65,16 @@
 
     <TextView
         android:id="@+id/Plot1"
-        android:layout_width="98dp"
-        android:layout_height="35dp"
+        android:layout_width="105dp"
+        android:layout_height="45dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/dekko"
+        android:layout_marginTop="30dp"
         android:text="Plot 1"
         android:textColor="@color/black"
-        android:textSize="13pt"
+        android:textSize="16pt"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/boardPlot1"
         app:layout_constraintTop_toTopOf="@+id/boardPlot1" />
-
-    <TextView
-        android:id="@+id/levelPlot1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:text="Level 0"
-        android:textColor="@color/black"
-        android:textSize="6.5pt"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/boardPlot1"
-        app:layout_constraintTop_toBottomOf="@+id/Plot1" />
 
     <TextView
         android:id="@+id/Minus1"
@@ -161,29 +148,16 @@
 
     <TextView
         android:id="@+id/Plot2"
-        android:layout_width="98dp"
-        android:layout_height="35dp"
+        android:layout_width="105dp"
+        android:layout_height="45dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/dekko"
+        android:layout_marginTop="30dp"
         android:text="Plot 2"
         android:textColor="@color/black"
-        android:textSize="13pt"
+        android:textSize="16pt"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/boardPlot2"
         app:layout_constraintTop_toTopOf="@+id/boardPlot2" />
-
-    <TextView
-        android:id="@+id/levelPlot2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:text="Level 0"
-        android:textColor="@color/black"
-        android:textSize="6.5pt"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/boardPlot2"
-        app:layout_constraintTop_toBottomOf="@+id/Plot2" />
 
     <TextView
         android:id="@+id/Minus2"
@@ -257,29 +231,17 @@
 
     <TextView
         android:id="@+id/Plot3"
-        android:layout_width="98dp"
-        android:layout_height="35dp"
+        android:layout_width="105dp"
+        android:layout_height="45dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/dekko"
+        android:layout_marginTop="30dp"
         android:text="Plot 3"
         android:textColor="@color/black"
-        android:textSize="13pt"
+        android:textSize="16pt"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/boardPlot3"
         app:layout_constraintTop_toTopOf="@+id/boardPlot3" />
 
-    <TextView
-        android:id="@+id/levelPlot3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:text="Level 0"
-        android:textColor="@color/black"
-        android:textSize="6.5pt"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/boardPlot3"
-        app:layout_constraintTop_toBottomOf="@+id/Plot3" />
 
     <TextView
         android:id="@+id/Minus3"
@@ -358,7 +320,7 @@
         android:layout_height="47dp"
         android:layout_marginTop="4dp"
         android:background="#00FFFFFF"
-        android:fontFamily="@font/dekko"
+
         android:text="Buy Farmer (10g)"
         android:textColor="#000000"
         android:textSize="24sp"
@@ -373,6 +335,24 @@
         android:src="@drawable/corn_1"
         app:layout_constraintBottom_toTopOf="@+id/BackBoard"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/corn2"
+        android:layout_width="155dp"
+        android:layout_height="179dp"
+        android:src="@drawable/corn_1"
+        android:layout_marginStart="-40dp"
+        app:layout_constraintBottom_toTopOf="@+id/BackBoard"
+        app:layout_constraintStart_toEndOf="@+id/corn1" />
+
+    <ImageView
+        android:id="@+id/corn3"
+        android:layout_width="155dp"
+        android:layout_height="179dp"
+        android:src="@drawable/corn_1"
+        android:layout_marginStart="-40dp"
+        app:layout_constraintBottom_toTopOf="@+id/BackBoard"
+        app:layout_constraintStart_toEndOf="@+id/corn2" />
 
     <ImageView
         android:id="@+id/farmer"
@@ -391,8 +371,8 @@
         android:layout_marginStart="196dp"
         android:layout_marginTop="12dp"
         android:text="0"
-        android:textStyle="bold"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/headerBoard"
         app:layout_constraintTop_toTopOf="@+id/headerBoard" />
 
@@ -413,6 +393,26 @@
         android:src="@drawable/cloud"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="251dp" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="35dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/coin1_16x16"
+        app:layout_constraintStart_toStartOf="@+id/headerBoard"
+        app:layout_constraintTop_toTopOf="@+id/headerBoard" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="53dp"
+        android:layout_height="54dp"
+        android:src="@drawable/farmer"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="3dp"
+        app:layout_constraintStart_toStartOf="@+id/headerBoard"
+        app:layout_constraintTop_toTopOf="@+id/headerBoard" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
