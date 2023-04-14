@@ -16,7 +16,7 @@ import java.util.function.Predicate;
  */
 public class Game {
 
-    private final Object mutex = new Object();
+    private final ArrayList<Object> locks = new ArrayList<>();
 
     private final Predicate<Consumer<Canvas>> useCanvas;
 
