@@ -5,6 +5,9 @@ import java.util.Random;
 public class Corn {
     private int level = 0;
 
+    public Corn() {
+        this(0);
+    }
     public Corn(int level) {
         this.level = level;
     }

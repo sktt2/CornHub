@@ -1,8 +1,8 @@
 package com.cornhub;
 
 public class Farmer {
-    private Corn corn;
-    private Object lock;
+    private Corn corn = null;
+    private Object lock = null;
     public Corn getCorn() {
         return corn;
     }
@@ -13,15 +13,20 @@ public class Farmer {
     public Object getLock() {
         return lock;
     }
-    public void setLock(Object lock) {this.lock = lock}
+    public void setLock(Object lock) {this.lock = lock;}
     public Runnable water = new Runnable() {
         @Override
         public void run() {
-
+            try {
+                System.out.println("Sleepin for 5 seconds");
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                System.out.println("Thread is interrupted");
+            }
         }
     }
-    public void water(){
-        //TODO add timer
-
-    }
+//    public void water(){
+//        //TODO add timer
+//
+//    }
 }
