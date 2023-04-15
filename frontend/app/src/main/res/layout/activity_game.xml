@@ -54,10 +54,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="70dp"
         android:layout_marginTop="15dp"
+        android:fontFamily="?attr/fontFamily"
         android:text="10"
         android:textColor="@color/black"
         android:textSize="10pt"
-        android:fontFamily="@font/vt323"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -387,11 +387,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="196dp"
         android:layout_marginTop="12dp"
+        android:fontFamily="?attr/fontFamily"
         android:text="0"
         android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:fontFamily="@font/vt323"
         app:layout_constraintStart_toStartOf="@+id/headerBoard"
         app:layout_constraintTop_toTopOf="@+id/headerBoard" />
 
@@ -402,7 +402,8 @@
         android:layout_marginTop="60dp"
         android:src="@drawable/cloud"
         app:layout_constraintTop_toTopOf="@+id/headerBoard"
-        tools:layout_editor_absoluteX="135dp" />
+        tools:layout_editor_absoluteX="135dp"
+        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/cloud2"
@@ -411,7 +412,8 @@
         android:layout_marginTop="44dp"
         android:src="@drawable/cloud"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="251dp" />
+        tools:layout_editor_absoluteX="251dp"
+        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/coin"
