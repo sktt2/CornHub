@@ -1,6 +1,5 @@
 package com.cornhub;
 
-import android.content.Context;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -19,7 +18,6 @@ public class GameManager implements View.OnClickListener {
     private Corn corn1;
     private Corn corn2;
     private Corn corn3;
-//    private ArrayList<Farmer> farmers;
     private ArrayList<Farmer> freeFarmers = new ArrayList<>();
     private ArrayList<Farmer> plot1Farmers = new ArrayList<>();
     private ArrayList<Farmer> plot2Farmers = new ArrayList<>();

@@ -10,16 +10,10 @@ import android.view.View;
 import android.view.WindowInsets;
 import android.view.WindowInsetsController;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
 
-/**
- * A class representing an activity of the main menu.
- */
 public class MainActivity extends Activity {
 
     private EditText editTextTextPersonName;

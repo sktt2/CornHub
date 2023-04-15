@@ -1,7 +1,6 @@
 package com.cornhub;
 
 import android.app.Activity;
-import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -13,9 +12,6 @@ import android.os.Handler;
 
 import java.util.ArrayList;
 
-/**
- * A class representing an activity of the game.
- */
 public class GameActivity extends Activity {
 
     private GameManager gameManager;
@@ -48,8 +44,6 @@ public class GameActivity extends Activity {
                 0f, 0f);          //  new TranslateAnimation(xFrom,xTo, yFrom,yTo)
         farmerAnimation.setDuration(5000);  // animation duration
         farmerAnimation.setRepeatCount(-1);  // animation repeat count
-//        animation.setRepeatMode(2);   // repeat animation (left to right, right to left )
-        //animation.setFillAfter(true);
 
         farmer.startAnimation(farmerAnimation);  // start animation
         ImageView cloud1 = findViewById(R.id.cloud1);
@@ -58,7 +52,6 @@ public class GameActivity extends Activity {
         cloud1Animation.setDuration(10000);  // animation duration
         cloud1Animation.setRepeatCount(-1);  // animation repeat count
         cloud1Animation.setRepeatMode(2);   // repeat animation (left to right, right to left )
-        //animation.setFillAfter(true);
         cloud1.startAnimation(cloud1Animation);  // start animation        farmer.startAnimation(farmerAnimation);  // start animation
         ImageView cloud2 = findViewById(R.id.cloud2);
         TranslateAnimation cloud2Animation = new TranslateAnimation(2000.0f, 0f,
@@ -66,7 +59,6 @@ public class GameActivity extends Activity {
         cloud2Animation.setDuration(7000);  // animation duration
         cloud2Animation.setRepeatCount(-1);  // animation repeat count
         cloud2Animation.setRepeatMode(2);   // repeat animation (left to right, right to left )
-        //animation.setFillAfter(true);
         cloud2.startAnimation(cloud2Animation);  // start animation
 
         ImageView coin = findViewById(R.id.coin);
@@ -103,7 +95,7 @@ public class GameActivity extends Activity {
                 {
                     i=0;
                 }
-                handler.postDelayed(this, 100);  //for interval...
+                handler.postDelayed(this, 16);  //for interval
             }
         };
         handler.postDelayed(runnable, 100);

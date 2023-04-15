@@ -1,4 +1,5 @@
 package com.cornhub;
+
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -29,20 +30,11 @@ public class DBHandler extends SQLiteOpenHelper {
                 " SELECT * FROM (SELECT 1,1,0,0,0,0,0,0,10,0,0,'Player"+ random.nextInt(10000000) + 1 +"') WHERE NOT EXISTS (SELECT * FROM farm)";
 
         db.execSQL(insert_query);
-
     }
 
 
     @Override
     public void onCreate(SQLiteDatabase db){
-//            String query = "CREATE TABLE IF NOT EXISTS farm " +
-//                    "(ID INT PRIMARY KEY, farmerCount INT, plant1Assigned INT, plant2Assigned INT, plant3Assigned INT," +
-//                    "corn1Level INT, corn2Level INT, corn3Level INT,"+
-//                    "farmerCost INT, gold INT, total INT);";
-//            db.execSQL(query);
-//            String insert_query = "INSERT INTO farm (farmerCount, plant1Assigned, plant2Assigned, plant3Assigned, corn1Level, corn2Level, corn3Level, farmerCost, gold, total) " +
-//                    "SELECT * FROM (SELECT 1,3,0,0,0,0,0,0,10,15,15) WHERE NOT EXISTS (SELECT * FROM farm)";
-//            db.execSQL(insert_query);
     }
 
     @Override
@@ -86,8 +78,6 @@ public class DBHandler extends SQLiteOpenHelper {
         Cursor c = writeDB.rawQuery(update,null);
         c.moveToFirst();
         c.close();
-
-        int[] data = getData();
     }
 
     public void updateName(String name){

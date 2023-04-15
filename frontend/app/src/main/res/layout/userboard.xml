@@ -19,7 +19,6 @@
             android:layout_height="match_parent"
             android:paddingLeft="40dp"
             android:text="Name"
-            android:fontFamily="@font/vt323"
             android:textStyle="bold"
             android:textColor="@color/black"
             android:gravity="center_vertical"
@@ -30,7 +29,6 @@
             android:layout_width="130dp"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
-            android:fontFamily="@font/vt323"
             android:text="1500"
             android:textStyle="bold"
             android:textColor="@color/black"
@@ -42,7 +40,6 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:text="100"
-            android:fontFamily="@font/vt323"
             android:textStyle="bold"
             android:textColor="@color/black"
             android:textSize="15sp" />
