@@ -9,6 +9,7 @@ import android.view.WindowInsets;
 import android.view.WindowInsetsController;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
+import android.os.Handler;
 
 import java.util.ArrayList;
 
@@ -18,6 +19,12 @@ import java.util.ArrayList;
 public class GameActivity extends Activity {
 
     private GameManager gameManager;
+
+    private int[] coin_ids = {
+            R.drawable.coin_1, R.drawable.coin_2, R.drawable.coin_3, R.drawable.coin_4, R.drawable.coin_5,
+            R.drawable.coin_6, R.drawable.coin_7, R.drawable.coin_8, R.drawable.coin_9
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,6 +69,9 @@ public class GameActivity extends Activity {
         //animation.setFillAfter(true);
         cloud2.startAnimation(cloud2Animation);  // start animation
 
+        ImageView coin = findViewById(R.id.coin);
+        coinAnimate(coin);
+
     }
     public void buttonClicked(View view) {
         int id = view.getId();
@@ -77,5 +87,24 @@ public class GameActivity extends Activity {
                 wic.hide(WindowInsets.Type.systemBars());
             }
         }
+    }
+
+    public void coinAnimate(ImageView coin) {
+        final Handler handler = new Handler();
+        Runnable runnable = new Runnable() {
+            int i = 0;
+            @Override
+            public void run() {
+                coin.setImageResource(coin_ids[i]);
+                i++;
+
+                if (i >= 9)
+                {
+                    i=0;
+                }
+                handler.postDelayed(this, 100);  //for interval...
+            }
+        };
+        handler.postDelayed(runnable, 100);
     }
 }

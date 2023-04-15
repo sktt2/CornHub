@@ -57,6 +57,7 @@
         android:text="10"
         android:textColor="@color/black"
         android:textSize="10pt"
+        android:fontFamily="@font/vt323"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -78,6 +79,7 @@
         android:layout_height="45dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="30dp"
+        android:fontFamily="@font/vt323"
         android:text="Plot 1"
         android:textColor="@color/black"
         android:textSize="16pt"
@@ -103,6 +105,7 @@
         android:layout_height="63dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="110dp"
+        android:fontFamily="@font/vt323"
         android:background="#00EFEAEA"
         android:textAlignment="viewEnd"
         android:textSize="20pt"
@@ -115,6 +118,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:text="1"
+        android:fontFamily="@font/vt323"
         android:textColor="@color/black"
         android:textSize="18pt"
         android:textStyle="bold"
@@ -162,6 +166,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="30dp"
         android:text="Plot 2"
+        android:fontFamily="@font/vt323"
         android:textColor="@color/black"
         android:textSize="16pt"
         android:textStyle="bold"
@@ -199,6 +204,7 @@
         android:layout_marginTop="25dp"
         android:text="2"
         android:textColor="@color/black"
+        android:fontFamily="@font/vt323"
         android:textSize="18pt"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/buttonMinus2"
@@ -245,6 +251,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="30dp"
         android:text="Plot 3"
+        android:fontFamily="@font/vt323"
         android:textColor="@color/black"
         android:textSize="16pt"
         android:textStyle="bold"
@@ -285,6 +292,7 @@
         android:textColor="@color/black"
         android:textSize="18pt"
         android:textStyle="bold"
+        android:fontFamily="@font/vt323"
         app:layout_constraintStart_toEndOf="@+id/buttonMinus3"
         app:layout_constraintTop_toTopOf="@+id/boardPlot3" />
 
@@ -329,7 +337,7 @@
         android:layout_height="47dp"
         android:layout_marginTop="4dp"
         android:background="#00FFFFFF"
-
+        android:fontFamily="@font/vt323"
         android:text="Buy Farmer (10g)"
         android:textColor="#000000"
         android:textSize="24sp"
@@ -380,8 +388,10 @@
         android:layout_marginStart="196dp"
         android:layout_marginTop="12dp"
         android:text="0"
+        android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold"
+        android:fontFamily="@font/vt323"
         app:layout_constraintStart_toStartOf="@+id/headerBoard"
         app:layout_constraintTop_toTopOf="@+id/headerBoard" />
 
@@ -404,12 +414,12 @@
         tools:layout_editor_absoluteX="251dp" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/coin"
         android:layout_width="35dp"
         android:layout_height="42dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="8dp"
-        android:src="@drawable/coin1_16x16"
+        android:src="@drawable/coin_1"
         app:layout_constraintStart_toStartOf="@+id/headerBoard"
         app:layout_constraintTop_toTopOf="@+id/headerBoard" />
 
