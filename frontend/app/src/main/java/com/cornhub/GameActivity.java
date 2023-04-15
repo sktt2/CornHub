@@ -77,6 +77,7 @@ public class GameActivity extends Activity {
         int id = view.getId();
 
         if (id == R.id.buttonMenu) {
+            gameManager.updateDB();
             this.finish();
         }
     }

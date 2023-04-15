@@ -217,7 +217,7 @@ public class GameManager implements View.OnClickListener {
     }
 
     public void updateButtons() {
-        db.updateData(this.farmerCount, this.plot1Farmers.size(), this.plot2Farmers.size(), this.plot3Farmers.size(), this.corn1.getLevel(), this.corn2.getLevel(), this.corn3.getLevel(), this.farmerCost, this.gold, this.total );
+        updateDB();
 
         if (this.freeFarmers.size() == 0){
             this.plot1Plus.setVisibility(View.INVISIBLE);
@@ -327,9 +327,15 @@ public class GameManager implements View.OnClickListener {
         gold +=amount;
         coinCount.setText(this.gold+"");
         startThread(plant);
-        db.updateData(this.farmerCount, this.plot1Farmers.size(), this.plot2Farmers.size(), this.plot3Farmers.size(), this.corn1.getLevel(), this.corn2.getLevel(), this.corn3.getLevel(), this.farmerCost, this.gold, this.total );
+        updateDB();
     }
 
+    public void updateDB(){
+        db.updateData(this.farmerCount, this.plot1Farmers.size(), this.plot2Farmers.size(), this.plot3Farmers.size(),
+                this.corn1.getLevel(), this.corn2.getLevel(), this.corn3.getLevel(),
+                this.farmerCost, this.gold, this.total );
+    }
+    
     public void startThread(int plant) {
         if (plant == 1){
             while (this.plot1Threads.size() != 0){
