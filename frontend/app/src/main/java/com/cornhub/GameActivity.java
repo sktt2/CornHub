@@ -95,9 +95,9 @@ public class GameActivity extends Activity {
                 {
                     i=0;
                 }
-                handler.postDelayed(this, 16);  //for interval
+                handler.postDelayed(this, 16);  // 16ms for each frame
             }
         };
-        handler.postDelayed(runnable, 100);
+        handler.postDelayed(runnable, 100); // wait 100ms before starting the animation
     }
 }
